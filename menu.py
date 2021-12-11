@@ -28,5 +28,3 @@ def make_item_butt(itemlist, cat):
 def items_butt(item):
     return types.InlineKeyboardMarkup(row_width=1).add(
         types.InlineKeyboardButton(text="Add to cart", callback_data='ADD'+str(item.ID)))
-
-    # make_item_butt(get('db.db'), 'First')

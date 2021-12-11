@@ -14,6 +14,4 @@ def get(name):
         if sqlite_connection:
             cursor.close()
             sqlite_connection.close()
-
-
-#TODO: change rerturn func
+# TODO: change rerturn func

@@ -1,6 +1,6 @@
 class Item:
-    def __init__(self, ID, category, name, descrition, price, amount_in_stock, img):
-        self.ID = ID
+    def __init__(self, id, category, name, descrition, price, amount_in_stock, img):
+        self.ID = id
         self.category = category
         self.name = name
         self.description = descrition
@@ -16,10 +16,15 @@ class Cart:
     def __init__(self):
         self.list = []
 
-    def add(self, id, itemlist):
-        for item in itemlist:
+    def add(self, id, item_list):
+        for item in item_list:
             if item.ID == id:
                 self.list.append(item)
 
-    def getItems(self):
+    def get_items(self):
         return [[item.name, self.list.count(item), item.price * self.list.count(item)] for item in set(self.list)]
+
+    def get_total(self, total=0):
+        for item in self.list:
+            total += item.price * self.list.count(item)
+        return total
